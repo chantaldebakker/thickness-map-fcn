@@ -10,7 +10,6 @@ def GetThicknessMap(in_im):
 	dt.InsideIsPositiveOn()
 	#dt.UseImageSpacingOn()
 	dt.SquaredDistanceOff()
-	#cropped_fx = sitk.BinaryThreshold(cropped_fx, lowerThreshold=126, upperThreshold=150, insideValue=1, outsideValue=0)
 	distancemap = dt.Execute(in_im)*cast.Execute(in_im)
 
 	sitk.WriteImage(distancemap, 'distancemap.mha')
